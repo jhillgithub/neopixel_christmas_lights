@@ -15,6 +15,8 @@ pixels = neopixel.NeoPixel(
     pixel_order=ORDER
 )
 
+app = Flask(__name__)
+
 def all_color(pixels, color):
     """Sets all of the pixels to a single color.
 

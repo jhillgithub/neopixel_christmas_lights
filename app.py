@@ -28,14 +28,14 @@ def all_color(pixels, color):
 
 @app.route("/")
 def index():
-    all_colors(pixels, (0, 32, 0))
-
     return render_template("index.html")
 
-@app.route("/set/all/<color>")
-def set_all(color):
-    print(color)
-    all_color(pixels, color)
+@app.route("/set-all")
+def set_all():
+    red = request.args.get('red', default=0, type=int)
+    green = request.args.get('green', default=0, type=int)
+    blue = request.args.get('blue', default=0, type=int)
+    all_color(pixels, (red, green, blue))
     return render_template("index.html")
 
 if __name__ == "__main__":

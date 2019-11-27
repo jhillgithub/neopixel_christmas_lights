@@ -28,6 +28,8 @@ def all_color(pixels, color):
 
 @app.route("/")
 def index():
+    all_colors(pixels, (0, 32, 0))
+
     return render_template("index.html")
 
 @app.route("/set/all/<color>")
